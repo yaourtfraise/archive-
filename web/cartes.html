@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>cards</title>
+<style>
+
+    .btn-cards {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
+
+  color: yellow;
+ font-family: Arial, Helvetica, sans-serif;
+  padding: 2px 4px;
+  border: none;
+ 
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.btn-cards:hover {
+  
+  transform: scale(1.05);
+}
+  body {
+    margin: 0; padding: 0;
+    background: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+
+  .card-section {
+    display: flex;
+    gap: 20px;
+    padding: 100px 40px;
+    scroll-snap-type: x mandatory;
+    align-items: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    width: 100vw;
+  }
+
+  .card-section::-webkit-scrollbar {
+  display: none; /* chrome, safari, opera */
+}
+
+  .card {
+    width: 192px;  /* 50.8mm */
+    height: 336px; /* 88.9mm */
+    perspective: 1000px;
+    cursor: pointer;
+    flex: 0 0 auto;
+  }
+
+  .card-inner {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+
+  .card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    top: 0; left: 0;
+    overflow: hidden;
+  }
+
+  .card-front {
+    background: white;
+    z-index: 2;
+  }
+
+  .card-back {
+    background: #eee;
+    transform: rotateY(180deg);
+  }
+
+  .card-front img, .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+</style>
+</head>
+<body>
+     <a href="index.html" class="btn-cards">retour</a>
+
+<div class="card-section">
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-08.svg" alt="Front 1" /></div>
+      <div class="card-back"><img src="import/CARDS-01.png" alt="Back 1" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-02.svg" alt="Front 2" /></div>
+      <div class="card-back"><img src="import/CARDS-03.png" alt="Back 2" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-09.svg" alt="Front 3" /></div>
+      <div class="card-back"><img src="import/CARDS-04.png" alt="Back 3" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-10.svg" alt="Front 4" /></div>
+      <div class="card-back"><img src="import/CARDS-05.png" alt="Back 4" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-11.svg" alt="Front 5" /></div>
+      <div class="card-back"><img src="import/CARDS-06.png" alt="Back 5" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-12.svg" alt="Front 6" /></div>
+      <div class="card-back"><img src="import/CARDS-07.png" alt="Back 6" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-17.svg" alt="Front 7" /></div>
+      <div class="card-back"><img src="import/CARDS-013.png" alt="Back 7" /></div>
+    </div>
+  </div>
+
+  <div class="card" onclick="flipCard(this)">
+    <div class="card-inner">
+      <div class="card-front"><img src="import/CARDS-18.svg" alt="Front 8" /></div>
+      <div class="card-back"><img src="import/CARDS-014.png" alt="Back 8" /></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function flipCard(card) {
+    card.classList.toggle('flipped');
+  }
+</script>
+
+</body>
+</html>
