@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="import" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="import" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
   <title>book</title>
   <style>
     .btn-cards {
@@ -30,13 +30,9 @@
     }
 
     body {
-        font-family: Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       margin: 0;
-      
       color: black;
-     
-       
-      
     }
 
     section {
@@ -52,10 +48,7 @@
       position: relative;
       color: #000;
       mix-blend-mode: difference;
-      
     }
-
-    
 
     .gallery {
       display: grid;
@@ -73,7 +66,6 @@
       image-rendering: pixelated;
       cursor: pointer;
       transition: transform 0.3s ease;
-      max-height: 50000px;
     }
 
     .gallery img:hover {
@@ -94,19 +86,9 @@
       text-align: left;
     }
 
-    
     tbody tr:hover {
       background-color: #ccc;
       cursor: pointer;
-    }
-
-    @media screen and (max-width: 768px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .glitch-text {
-        font-size: 1.5rem;
-      }
     }
 
     .fixed-btn {
@@ -114,7 +96,6 @@
       top: 10px;
       left: 10px;
       z-index: 999;
-      
       color: yellow;
       padding: 10px 16px;
       border: none;
@@ -145,24 +126,63 @@
     }
 
     svg#draw-svg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100vw;
-  height: auto;
-  stroke: black;
-  fill: none;
-  stroke-width: 0.5;
-  pointer-events: none;
-  z-index: 99999;
-}
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100vw;
+      height: auto;
+      stroke: black;
+      fill: none;
+      stroke-width: 0.5;
+      pointer-events: none;
+      z-index: 99999;
+    }
 
-.cls-1 {
-  stroke: black;
-  fill: none;
-  stroke-width: 0.5;
-}
+    .cls-1 {
+      stroke: black;
+      fill: none;
+      stroke-width: 0.5;
+    }
+
+    /* 📱 Responsive rules */
+    @media screen and (max-width: 1024px) {
+      .gallery {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .glitch-text {
+        font-size: 1rem;
+        padding-left: 2vw;
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .glitch-text {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0.5rem;
+      }
+      .fixed-btn {
+        bottom: 10px;
+        top: auto;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        padding: 8px 12px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .gallery {
+        grid-template-columns: 1fr; /* full width sur petit écran */
+      }
+      .glitch-text {
+        font-size: 1rem;
+
+
 
 
     @keyframes draw {
