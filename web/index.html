@@ -160,23 +160,24 @@
     }
 
     @media screen and (max-width: 768px) {
-      .gallery {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .glitch-text {
-        font-size: 1.2rem;
-        text-align: center;
-        padding: 0.5rem;
-      }
-      .fixed-btn {
-        bottom: 10px;
-        top: auto;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 12px;
-        padding: 8px 12px;
-      }
-    }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .glitch-text {
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 1rem 0.5rem 0 0.5rem; /* padding-top inclus pour le bouton */
+  }
+  .fixed-btn {
+    top: auto;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+}
+
 
     @media screen and (max-width: 480px) {
       .gallery {
@@ -186,6 +187,8 @@
         font-size: 1rem;
       }
     }
+
+    
 
     @keyframes draw {
       to {
