@@ -890,22 +890,24 @@
       cardElement.classList.toggle('flipped');
     }
 
-    // lightbox script
     const images = document.querySelectorAll(".gallery img");
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.getElementById("lightbox-img");
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
 
-    images.forEach(img => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightbox.style.display = "flex";
-      });
-    });
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    if (window.innerWidth > 768) { // desktop seulement
+      lightboxImg.src = img.src;
+      lightbox.style.display = "flex";
+    }
+  });
+});
 
-    lightbox.addEventListener("click", () => {
-      lightbox.style.display = "none";
-      lightboxImg.src = "";
-    });
+lightbox.addEventListener("click", () => {
+  lightbox.style.display = "none";
+  lightboxImg.src = "";
+});
+
   </script>
 </body>
 </html>
